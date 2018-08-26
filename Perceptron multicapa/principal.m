@@ -1,0 +1,19 @@
+%Red Adaline
+clear all   %limpiamos los datos que pueda estar resguardando matlab
+fprintf('Ingrese el archivo con lo vectores prototipo\n');
+[archivo,ruta]=uigetfile('*.txt','ABRIR ARCHIVO');
+if archivo==0
+    return;
+else
+fid =fopen([ruta archivo],'r');
+ce = load(strcat(ruta,archivo));
+fclose(fid);
+end
+
+plot(ce);
+
+a=input('Ingrese el primer elemento para sumar: \n');
+b=input('Ingrese el segundo elemento para sumar: \n');
+y=suma(a,b);
+
+disp(y);
